@@ -1,0 +1,93 @@
+Project started Sunday March 24, 2019
+This is my attempt at making a functional command line interface with 
+functional and practical arguments.
+------------------------------------------------------------------------
+March 24 2019
+Run on Linux platform.
+>Project research & planning
+    -Written in python!
+    -Modules
+        -OS
+        -
+    -Heavy commenting & documentation (Keep it comprehensive)
+    -Utilise threads and processes.
+>Desired Features
+    -cd <directory> -- change directory, if the <directory> is not present
+                       display the current directory. If the <directory>
+                       DOES NOT exist a message/error should be displayed.
+    -clr -- clear the screen.
+    -dir <directory> -- list the contents of the directory <directory>
+    -environ -- lists all the environment strings.  (??)
+    -echo <comment> -- displays <comment> followed by a new line. Converts
+                       multiple consecutive spaces or tabs to a single space.
+    -help -- display the user manual using a more filter. (??)
+    -pause -- pause operation of the cli until the enter key is pressed.
+    -quit -- quits the cli.
+
+    To be able to invoke programs and execute them as the cli's child process.
+    To be able to read input from command line argument file and exit after the
+        instructions within the file has finished executing. If no file is 
+        provided, then the cli should work with user input on the display.
+    Readme (OPERATOR) manual for those who wants to understand how to use the 
+    cli.
+    To be able to support i/o redirection on either or both stdin and/or stdout.
+        The command line: programname arg1 arg2 < inputfile > outputfile will execute the program programname with arguments arg1 and arg2, the stdin FILE stream replaced by inputfile and the stdout FILE stream replaced by outputfile.  stdout redirection should also be possible for the internal commands: dir, environ, echo, & help.  With output redirection, if the redirection character is > then the outputfile is created if it does not exist and truncated if it does. If the redirection token is >> then outputfile is created if it does not exist and appended to if it does.
+    **MAKE THE PROGRAM MAINTAINABLE**
+------------------------------------------------------------------------
+March 27 2019
+More reasearch on the modules and hand picked the useful methods within them that will be used within the CLI.
+>Modules
+    -OS
+    -Cmd
+    -argsparse
+Initial structure of the main program was developed with placeholder methdods
+for each of the methods described in the spec on the previous log.
+    -Assigned a *help* method for each individual method for user purposes.
+    A more technical documentation can be found commented within the methods.
+Implemented prompt to display the current working directory.
+    -Added help method
+Implemented quit command.
+    -Added help method with a prompt for user confirmation.
+    print("\033[1;32;40m Bright Green  \n")
+Implemented a dir command.
+    -Not formatted output of the filenames.
+    -Desired feature
+        -Colour coded names based on permissions of the file.
+
+Discovered ANSI Escape codes. Used by clear command by moving the cursor to the top-left and displaying a bunch of black lines.
+
+------------------------------------------------------------------------
+March 30 2019
+Implemented an environ command.
+    -Formatted the environment keys and values from calling os.environ
+    -Implemented the help command.
+Implemented pause command.
+    -Implemented help.
+Implemented a help command.
+    -Collection of all help commands.
+    -More detailed help on individual commands upon direct invokation.
+Issue with implementing my own help command. Overrides the cmd help functions. Attempting to implement a workaround. Regardless the messiness.
+Finished implementing commands and their individual help calls.
+Heavily commenting all lines. zzZZZZZZzzzzZzZzzzz
+------------------------------------------------------------------------
+April 1 2019
+Finished up documentation.
+Reworked help command using a diy help flag to enable or disable 'more' functionality.
+Implemented simple subprocess call.
+Attempting to implement 'batchfile' compatibility.
+    -Added multiple batch file support.
+        -Functioning.....but not refined.
+------------------------------------------------------------------------
+April 10 2019
+BACK FROM THE DEAD AND EXCAPED PROCRASTINATION!
+Added exception for command "clear". There is a bug where the do_default does not catch the clear command call even though the cli it does not have a do_clear method.
+    -(Something to do with os module I assume(?))
+Found bug with using a batch file as input.
+    -Calling quit requires user input which conflicts with using a file as stdin.
+    -Functionality/behaviour  of the commands are also somewhat different.
+*   -Find time to fix!!()!!()!!!?!?!?!!!)!!(!))!()!()!() 
+------------------------------------------------------------------------
+April 22 2019
+Implemented the I/O redirection for the shell.
+Background execution.
+Writing up user manual. zzzz
