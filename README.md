@@ -115,8 +115,8 @@ Standard in can be redirected to use the provided file as a source. Note, standa
 
 Typing `python3 sample_program.py args.txt args2.txt` will be invalid and an error will errupt.
 
-Outputs can be redirected using the following signatures:
-`>>` - create a file if it does not exist already and append to it.
+Outputs can be redirected using the following signatures:\
+`>>` - create a file if it does not exist already and append to it.\
 `>` - create a file if it does not exist already and write to it (overwriting what it already contains)
 
 **Example usage**:
